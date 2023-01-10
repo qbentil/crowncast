@@ -5,7 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#6941C6"
+      },
+    },
     display: ["group-hover"],
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
