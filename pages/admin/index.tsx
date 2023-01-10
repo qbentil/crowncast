@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import { Login } from '../../components'
+import { useStateValue } from '../../context/StateProvider'
 
 export default function AdminDashboard() {
+    const [{user}, dispatch] = useStateValue()
   return (
     <>
       <Head>
@@ -11,7 +13,9 @@ export default function AdminDashboard() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={'w-full h-[100vh]'}>
-        <Login user='admin' />
+        {
+            user ? <h1>Admin Dashboard</h1> : <Login user='admin' />
+        }
       </main>
     </>
   )
