@@ -9,8 +9,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={'w-full h-[100vh] bg-red-500'}>
-
+      <main className={'w-full h-[100vh] flex items-center justify-center'}>
+         {/* Coming soon */}
+          <p className="text-2xl text-gray-500">Coming soon!</p>
       </main>
     </>
   )
