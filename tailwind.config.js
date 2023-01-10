@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    display: ["group-hover"],
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+    }
   },
   plugins: [],
 }
