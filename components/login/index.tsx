@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import {FcGoogle} from "react-icons/fc"
+import { FcGoogle } from "react-icons/fc";
+import { useStateValue } from "../../context/StateProvider";
 const Login = ({ user }: { user: "admin" | "organizer" }) => {
+  const [{}, dispatch] = useStateValue();
   return (
     <div className="w-full h-full bg-white flex items-center justify-center">
       <div className="w-[30%] h-4/5 flex flex-col gap-y-4">
@@ -48,7 +50,10 @@ const Login = ({ user }: { user: "admin" | "organizer" }) => {
                   id="remember"
                   className="w-4 h-4 border border-gray-300 rounded-md focus:outline-none focus:border-primary focus:text-primary"
                 />
-                <label htmlFor="remember" className="text-sm text-gray-500 cursor-pointer">
+                <label
+                  htmlFor="remember"
+                  className="text-sm text-gray-500 cursor-pointer"
+                >
                   Remember me
                 </label>
               </div>
@@ -64,19 +69,18 @@ const Login = ({ user }: { user: "admin" | "organizer" }) => {
             </button>
 
             <button className="w-full flex items-center justify-center gap-x-3 bg-white border border-gray-300 rounded-md p-2 ">
-                <FcGoogle /> Sign in with Google
+              <FcGoogle /> Sign in with Google
             </button>
           </div>
-
         </form>
 
         {/* footer */}
         <div className="w-full flex flex-col gap-y-1 mt-4">
           <div className="w-full gap-y-4    flex flex-col items-center justify-center">
             <p className="text-sm text-gray-500">
-              <span className="text-primary">CrownCast</span> © 2021 | All Rights Reserved
+              <span className="text-primary">CrownCast</span> © 2021 | All
+              Rights Reserved
             </p>
-            {/* <p className="text-primary text-sm">@CrownCast👑</p> */}
           </div>
         </div>
       </div>
