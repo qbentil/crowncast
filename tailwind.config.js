@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#6941C6"
+        primary: "#6941C6",
+        hover: "#7F56D9",
       },
     },
     display: ["group-hover"],
