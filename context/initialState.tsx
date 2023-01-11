@@ -1,6 +1,5 @@
-
 export const initialState = {
-    user:null,
-    events: [],
-    contestants: [],
-}
+  user: null,
+  events: [],
+  contestants: [],
+};
