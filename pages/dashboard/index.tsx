@@ -13,7 +13,7 @@ const Dashboard = ({ user }: { user: string }) => {
       </Head>
       <main className={"w-full h-[100vh] flex items-center justify-center"}>
         {/* 25% width for sidebar */}
-        <Sidebar user={user} />
+        <Sidebar user={"admin"} />
         {/* 75% width for content */}
         <ContentArea />
       </main>
