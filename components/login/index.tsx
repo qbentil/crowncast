@@ -8,11 +8,11 @@ const Login = ({ user }: { user: "admin" | "organizer" }) => {
     <div className="w-full h-full bg-white flex items-center justify-center">
       <div className="w-[30%] h-4/5 flex flex-col gap-y-4">
         {/* LOGO */}
-        <div className="w-full  flex flex-col gap-y-4 items-center justify-center">
+        <div className="w-full  flex flex-col gap-y-5 items-center justify-center">
           <img src="/assets/crown-cast.png" alt="logo" className="w-1/2" />
           <h2 className="font-bold text-xl">Login to your account</h2>
           <p className="text-sm text-gray-500">
-            Welcome back {user}! Please enter your credentials{" "}
+            Welcome back {user}! Please enter your credentials
           </p>
         </div>
         <form className="" action="" autoComplete="off">
