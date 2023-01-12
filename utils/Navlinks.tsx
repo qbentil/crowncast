@@ -6,17 +6,16 @@ import { BiLogOutCircle } from "react-icons/bi";
 import { CiSettings } from "react-icons/ci";
 
 export const ActionItems: NavItem[] = [
-    {
-        name: "Settings",
-        icon: <FiSettings />,
-        protected: false,
-    },
+  {
+    name: "Settings",
+    icon: <FiSettings />,
+    protected: false,
+  },
   {
     name: "Logout",
     icon: <BiLogOutCircle />,
     protected: false,
   },
-  
 ];
 const NavItems: NavItem[] = [
   {
@@ -29,7 +28,7 @@ const NavItems: NavItem[] = [
     name: "Events",
     link: "/events",
     icon: <FiLayers />,
-    protected: true,
+    protected: false,
   },
   {
     name: "Organizers",
