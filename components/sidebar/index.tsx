@@ -16,6 +16,7 @@ const SideBar = ({ user }: { user: string }) => {
         </div>
         <div className="flex flex-col items-start justify-start gap-y-2">
           {NavItems.map((item, index) => {
+            if(user !== "admin" && item.protected) return null;
             return <NavItem key={index} data={item} />;
           })}
         </div>
