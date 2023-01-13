@@ -1,8 +1,11 @@
 import Head from "next/head";
 import React from "react";
-import { ContentArea, Sidebar } from "../../components";
+import { ContentArea, Login, Sidebar } from "../../components";
+import { useStateValue } from "../../context/StateProvider";
 
-const Dashboard = ({ user }: { user: string }) => {
+const Dashboard = () => {
+  const [{ user }, dispatch] = useStateValue();
+  if (!user) return <Login />;
   return (
     <>
       <Head>
