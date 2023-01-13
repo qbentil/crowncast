@@ -20,7 +20,7 @@ export const ActionItems: NavItem[] = [
 const NavItems: NavItem[] = [
   {
     name: "Dashboard",
-    link: "/",
+    link: "/dashboard",
     icon: <FiBarChart2 />,
     protected: false,
   },
