@@ -3,8 +3,10 @@ import Link from "next/link";
 import React from "react";
 import NavItems, { ActionItems } from "../../utils/Navlinks";
 import NavItem from "./NavItem";
+import { useStateValue } from "../../context/StateProvider";
 
-const SideBar = ({ user }: { user: string }) => {
+const SideBar = () => {
+  const [{ user }, dispatch] = useStateValue();
   const Logout = () => {
     console.log("logout");
   };
@@ -16,7 +18,7 @@ const SideBar = ({ user }: { user: string }) => {
         </div>
         <div className="flex flex-col items-start justify-start gap-y-2">
           {NavItems.map((item, index) => {
-            if(user !== "admin" && item.protected) return null;
+            if (user?.role !== "admin" && item.protected) return null;
             return <NavItem key={index} data={item} />;
           })}
         </div>
@@ -38,14 +40,16 @@ const SideBar = ({ user }: { user: string }) => {
           >
             <div className="w-8 h-8 rounded-full bg-gray-200">
               <img
-                src="/assets/bentil.jpeg"
+                src={user?.avatar || "/assets/bentil.jpeg"}
                 alt="profile"
                 className="w-full rounded-full"
               />
             </div>
             <div className="flex flex-col">
-              <span className="">Shadrack Bentil</span>
-              <span className="text-xs ">sbentil005@st.ug.edu.gh</span>
+              <span className="">{user?.name || "Shadrack Bentil"}</span>
+              <span className="text-xs ">
+                {user?.email || " sbentil005@st.ug.edu.gh"}
+              </span>
             </div>
           </Link>
         </div>
