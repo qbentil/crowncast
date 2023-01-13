@@ -1,5 +1,8 @@
 export const initialState = {
-  user: null,
+  user: {
+    role: "admin",
+    email: "admin@test.com"
+  },
   events: [],
   contestants: [],
 };
