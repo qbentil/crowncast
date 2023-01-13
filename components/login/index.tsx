@@ -2,17 +2,19 @@
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useStateValue } from "../../context/StateProvider";
-const Login = ({ user }: { user: "admin" | "organizer" }) => {
+const Login = () => {
   const [{}, dispatch] = useStateValue();
+  const [userType, setUserType] = React.useState("organizer");
+
   return (
-    <div className="w-full h-full bg-white flex items-center justify-center">
+    <div className="w-full h-[100vh] bg-white flex items-center justify-center">
       <div className="w-[30%] h-4/5 flex flex-col gap-y-4">
         {/* LOGO */}
         <div className="w-full  flex flex-col gap-y-5 items-center justify-center">
           <img src="/assets/crown-cast.png" alt="logo" className="w-1/2" />
           <h2 className="font-bold text-xl">Login to your account</h2>
-          <p className="text-sm text-gray-500">
-            Welcome back {user}! Please enter your credentials
+          <p className="text-sm text-gray-500 capitalize">
+            Welcome back {userType}!
           </p>
         </div>
         <form className="" action="" autoComplete="off">
@@ -75,7 +77,22 @@ const Login = ({ user }: { user: "admin" | "organizer" }) => {
         </form>
 
         {/* footer */}
-        <div className="w-full flex flex-col gap-y-1 mt-4">
+        <div className="w-full flex flex-col gap-y-3 mt-4">
+          <div className="w-full flex items-center justify-center">
+            <p className="text-sm text-gray-500 flex items-center justify-center gap-x-2">
+              <span>Not an {userType} yet?</span>
+              <a
+                className="text-primary cursor-pointer font-bold"
+                onClick={() =>
+                  setUserType((prev) =>
+                    prev === "admin" ? "organizer" : "admin"
+                  )
+                }
+              >
+                Login as {userType === "admin" ? "organizer" : "admin"}
+              </a>
+            </p>
+          </div>
           <div className="w-full gap-y-4    flex flex-col items-center justify-center">
             <p className="text-sm text-gray-500">
               <span className="text-primary">CrownCast</span> © 2021 | All
