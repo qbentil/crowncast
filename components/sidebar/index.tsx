@@ -11,7 +11,7 @@ const SideBar = () => {
     console.log("logout");
   };
   return (
-    <div className="w-[20%] h-full bg-primary flex flex-col gap-y-4 items-center justify-start">
+    <div className="w-[20%] h-full bg-primary flex flex-col gap-y-4 items-center justify-start font-sans">
       <div className="w-full flex flex-col gap-y-2 py-6 px-4">
         <div className="w-full flex items-start justify-start mb-4">
           <img src="/assets/crowncast.svg" alt="logo" className="w-40" />
