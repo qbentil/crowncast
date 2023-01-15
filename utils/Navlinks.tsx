@@ -1,9 +1,10 @@
-import { NavItem } from "../types";
 import { FiBarChart2, FiLayers, FiSettings } from "react-icons/fi";
-import { BsCheckSquare } from "react-icons/bs";
 import { HiOutlineUser, HiOutlineUsers } from "react-icons/hi";
-import { BiLogOutCircle } from "react-icons/bi";
+
+import { BiCategoryAlt, BiLogOutCircle } from "react-icons/bi";
+import { BsCheckSquare } from "react-icons/bs";
 import { CiSettings } from "react-icons/ci";
+import { NavItem } from "../types";
 
 export const ActionItems: NavItem[] = [
   {
@@ -20,7 +21,7 @@ export const ActionItems: NavItem[] = [
 const NavItems: NavItem[] = [
   {
     name: "Dashboard",
-    link: "/dashboard",
+    link: "/",
     icon: <FiBarChart2 />,
     protected: false,
   },
@@ -40,6 +41,12 @@ const NavItems: NavItem[] = [
     name: "Contestants",
     link: "/contestants",
     icon: <HiOutlineUser />,
+    protected: false,
+  },
+  {
+    name: "Categories",
+    link: "/categories",
+    icon: <BiCategoryAlt />,
     protected: false,
   },
   {
