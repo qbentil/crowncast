@@ -13,7 +13,7 @@ const Info = [
     state: "down",
     title: "Total Votes",
     preval: 100,
-    value: 50,
+    value: 25,
   },
   {
     state: "up",
