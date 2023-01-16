@@ -18,9 +18,9 @@ const Card = ({ state, title, value, preval }: Props) => {
         <p className="text-sm">{title}</p>
         <SlOptionsVertical className="text-gray-500 cursor-pointer" />
       </div>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between px-4">
         <div>
-          <p className="text-xl font-bold">{value}</p>
+          <p className="text-4xl font-bold">{value}</p>
           <div className="flex items-center justify-center">
             {state === "up" ? (
               <AiOutlineArrowUp className="text-green-500" />
@@ -29,7 +29,7 @@ const Card = ({ state, title, value, preval }: Props) => {
             )}
             <p className="text-sm">
               <span
-                className={`
+                className={`font-bold
                 ${state === "up" ? "text-green-500" : "text-red-500"}
               `}
               >
