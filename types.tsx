@@ -17,7 +17,8 @@ export type User = {
     updatedAt?: string,
     avatar?: string,
     address?: string,
-    status: "active" | "inactive"
+    status: "active" | "inactive",
+    userType: "admin" | "organizer"
 }
 
 export type Company = {
