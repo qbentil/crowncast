@@ -1,3 +1,5 @@
+import { type } from "os";
+
 export type NavItem = {
     name: string;
     link?: string;
@@ -26,4 +28,13 @@ export type Company = {
     name: string,
     address: string,
     phone?: string,
+}
+
+export type Category = {
+    _id: string,
+    title: string,
+    description?: string,
+    createdAt?: string,
+    updatedAt?: string,
+
 }
