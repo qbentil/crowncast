@@ -17,7 +17,7 @@ interface Props {
 
 const Button = ({className, icon, iconPosition = "left", loading,onClick, disabled, title, variant }: Props) => {
   return (
-    <button className={` py-2 px-4 rounded flex items-center justify-center gap-x-2 ${className} ${
+    <button className={`hover:shadow-lg py-2 px-4 rounded flex items-center justify-center gap-x-2 ${className} ${
         variant === 'secondary' ? 'bg-white text-primary border border-gray-300' :
         variant === 'danger' ? 'bg-red-600 text-white' :
         variant === 'success' ? 'bg-green-600 text-white' :
