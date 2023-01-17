@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { SlOptionsVertical } from "react-icons/sl";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
@@ -18,13 +19,13 @@ const Card = ({ state, title, value, preval }: Props) => {
         <p className="text-sm">{title}</p>
         <SlOptionsVertical className="text-gray-500 cursor-pointer" />
       </div>
-      <div className="flex items-center justify-between px-4">
+      <div className="flex items-center justify-between px-2">
         <div>
           <p className="text-4xl font-bold">{value}</p>
           <div className="flex items-center justify-center">
             {state === "up" ? (
               <AiOutlineArrowUp className="text-green-500" />
-            ) : (
+              ) : (
               <AiOutlineArrowDown className="text-red-500" />
             )}
             <p className="text-sm">
@@ -34,16 +35,18 @@ const Card = ({ state, title, value, preval }: Props) => {
               `}
               >
                 {percentage}%
-              </span>{" "}
+              </span>
               vs Last 24 hours
             </p>
           </div>
         </div>
         <div className="flex items-center justify-center">
           {state === "up" ? (
-            <BsGraphUp className="text-green-500 text-4xl" />
+            // <BsGraphUp className="text-green-500 text-4xl" />
+            <img src="/assets/up-graph.svg" className="w-4/5" alt="up-graph" />
           ) : (
-            <BsGraphDown className="text-red-500 text-4xl" />
+            // <BsGraphDown className="text-red-500 text-4xl" />
+            <img src="/assets/down-graph.svg" className="w-4/5" alt="down-graph" />
           )}
         </div>
       </div>
