@@ -34,7 +34,7 @@ const Card = ({ state, title, value, preval }: Props) => {
                 ${state === "up" ? "text-green-500" : "text-red-500"}
               `}
               >
-                {percentage}%
+                {percentage}% {` `}
               </span>
               vs Last 24 hours
             </p>
