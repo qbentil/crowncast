@@ -1,25 +1,18 @@
-import { Category } from "../../types";
+import { Category, OptionType } from "../../types";
 import { IoFilterOutline, IoSearchOutline } from "react-icons/io5";
 import { useState } from "react";
 import Searchbar from "../searchbar";
 
-type OptionType = {
-  value: string;
-  label: string;
-};
 const Filter = ({
   onChange,
-  data,
+  options,
+  selected,
 }: {
   onChange: (e: any) => void;
-  data: Category[];
+  options: OptionType[];
+  selected: OptionType[];
 }) => {
-  const options = data.map((category: Category) => {
-    return {
-      value: category._id,
-      label: category.title,
-    };
-  }) as OptionType[];
+
   const onSearch = (e:any):void => {
     const value = e.target.value;
     const filtered = options.filter((option) =>
@@ -27,10 +20,16 @@ const Filter = ({
     );
     setFiltered(filtered);
   }
-  const [selected, setSelected] = useState(options[0]);
   const [filtered, setFiltered] = useState<OptionType[]>(options);
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleSelect = (option: OptionType) => {
+    onChange(option);
+    // setIsOpen(false);
+  }
+  const isSelected = (option: OptionType) => {
+    return selected.find((item: OptionType) => item.value === option.value) ? true : false;
+  }
   return (
     <div className="relative">
       <div
@@ -59,6 +58,8 @@ const Filter = ({
                         id={option.value}
                         type="checkbox"
                         value={option.value}
+                        checked={isSelected(option)}
+                        onChange={() => handleSelect(option)}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 "
                       />
                       <label
