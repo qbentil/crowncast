@@ -38,3 +38,8 @@ export type Category = {
     updatedAt?: string,
 
 }
+
+export type OptionType = {
+    value: string;
+    label: string;
+  };
