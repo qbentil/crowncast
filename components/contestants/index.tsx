@@ -4,6 +4,7 @@ import React from "react";
 import Searchbar from "../searchbar";
 import { useState } from "react";
 import { OptionType } from "../../types";
+import ContestantsTable from "./table";
 const filters = [
   {
     value : "votes",
@@ -59,6 +60,9 @@ const Contestants = () => {
         {/* searchbar */}
         <Searchbar />
       </div>
+
+      {/* table */}
+      <ContestantsTable />
     </div>
   );
 };
