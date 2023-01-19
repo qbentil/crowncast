@@ -1,7 +1,6 @@
 import React from 'react'
 import { MdEdit, MdDelete } from 'react-icons/md'
-import Button from '../../Button'
-import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
+import Pagination from '../../pagination'
 
 const ContestantsTable = () => {
     return (
@@ -48,19 +47,14 @@ const ContestantsTable = () => {
 
             {/* table controllers */}
             <div className='w-full flex items-center justify-between px-2 py-3'>
-                <Button
-                    icon={<BsArrowLeft />}
-                    title='Previous'
-                    variant='secondary'
-                />
-                <div>
+                <Pagination
+                    currentPage={1}
+                    totalPages={10}
+                    onPageChange={(page) => console.log(page)}
+                    showIcons={true}
+                    nextLabel='Next'
+                    prevLabel='Prev'
 
-                </div>
-                <Button
-                    icon={<BsArrowRight />}
-                    title='Next'
-                    iconPosition='right'
-                    variant='secondary'
                 />
             </div>
         </div>
