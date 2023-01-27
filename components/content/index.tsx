@@ -3,12 +3,15 @@ import InfoGraphics from "../infographic";
 import PageTop from "./navbar";
 import React from "react";
 
-const ContentArea = () => {
+interface ContentAreaProps {
+  children?: React.ReactNode;
+}
+
+const ContentArea = ({children}: ContentAreaProps) => {
   return (
     <div className="w-full h-full flex flex-col gap-y-4 px-6 py-4">
       <PageTop />
-      <InfoGraphics />
-      <Contestants />
+      {children}
     </div>
   );
 };
