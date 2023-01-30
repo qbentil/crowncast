@@ -1,5 +1,3 @@
-import Contestants from "../contestants";
-import InfoGraphics from "../infographic";
 import PageTop from "./navbar";
 import React from "react";
 
