@@ -1,7 +1,12 @@
 import React from "react";
 import { IoSearchOutline } from "react-icons/io5";
 
-const Searchbar = ({ onSearch }: { onSearch?: (e:any) => void }) => {
+interface SearchbarProps {
+  onSearch?: (e: any) => void;
+  placeholder?: string;
+}
+
+const Searchbar = ({ onSearch, placeholder }: SearchbarProps) => {
   return (
     <>
       <label htmlFor="input-group-search" className="sr-only">
@@ -15,7 +20,7 @@ const Searchbar = ({ onSearch }: { onSearch?: (e:any) => void }) => {
           type="text"
           id="input-group-search"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none block w-full pl-10 p-2.5 "
-          placeholder="Search"
+          placeholder={`${placeholder} Search`}
           onChange={onSearch}
         />
       </div>
