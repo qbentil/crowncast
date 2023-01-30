@@ -1,7 +1,7 @@
+import { BiCategoryAlt, BiLogOutCircle } from "react-icons/bi";
 import { FiBarChart2, FiLayers, FiSettings } from "react-icons/fi";
 import { HiOutlineUser, HiOutlineUsers } from "react-icons/hi";
 
-import { BiCategoryAlt, BiLogOutCircle } from "react-icons/bi";
 import { BsCheckSquare } from "react-icons/bs";
 import { CiSettings } from "react-icons/ci";
 import { NavItem } from "../types";
@@ -10,6 +10,7 @@ export const ActionItems: NavItem[] = [
   {
     name: "Settings",
     icon: <FiSettings />,
+    link: "/settings",
     protected: false,
   },
   {
@@ -51,7 +52,7 @@ const NavItems: NavItem[] = [
   },
   {
     name: "Users",
-    link: "/users",
+    link: "/admins",
     icon: <HiOutlineUsers />,
     protected: true,
   },
