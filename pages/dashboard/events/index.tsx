@@ -1,7 +1,8 @@
 import Head from "next/head";
 import React from "react";
-import { ContentArea, Login, Sidebar } from "../../../components";
+import { ContentArea, Login, Sidebar, SubHeader } from "../../../components";
 import { useStateValue } from "../../../context/StateProvider";
+import { Filters } from "../../../utils/dump";
 
 const EventsPage = () => {
     const [{ user }, dispatch] = useStateValue();
@@ -19,7 +20,7 @@ const EventsPage = () => {
                 <Sidebar />
                 {/* 75% width for content */}
                 <ContentArea>
-                    <h1>Events Table Here!</h1>
+                    <SubHeader title="Events" filters={Filters} />
                 </ContentArea>
             </main>
         </>
