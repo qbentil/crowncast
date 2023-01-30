@@ -1,6 +1,7 @@
+import { ContentArea, Login, Sidebar } from "../../../components";
+
 import Head from "next/head";
 import React from "react";
-import { ContentArea, Login, Sidebar } from "../../../components";
 import { useStateValue } from "../../../context/StateProvider";
 
 const ContestantsPage = () => {
@@ -18,7 +19,9 @@ const ContestantsPage = () => {
         {/* 25% width for sidebar */}
         <Sidebar />
         {/* 75% width for content */}
-        <ContentArea />
+        <ContentArea>
+          <p>Contestants</p>
+        </ContentArea>
       </main>
     </>
   );
