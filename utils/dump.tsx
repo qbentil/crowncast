@@ -21,3 +21,18 @@ export const Categories = [
         updatedAt: "2021-05-01T12:00:00.000Z",
     }
 ]
+
+export const Filters = [
+    {
+      value : "votes",
+      label: "Votes"
+    },
+    {
+      value: "events",
+      label: "Events"
+    },
+    {
+      value: "categories",
+      label: "Categories"
+    }
+  ]
