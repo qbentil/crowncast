@@ -19,9 +19,7 @@ const SettingsPage = () => {
         {/* 25% width for sidebar */}
         <Sidebar />
         {/* 75% width for content */}
-        <ContentArea>
-          <p>System Settings</p>
-        </ContentArea>
+        <ContentArea />
       </main>
     </>
   );
