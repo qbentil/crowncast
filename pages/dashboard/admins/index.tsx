@@ -19,9 +19,7 @@ const AdminsPage = () => {
         {/* 25% width for sidebar */}
         <Sidebar />
         {/* 75% width for content */}
-        <ContentArea>
-          <p>System Admins</p>
-        </ContentArea>
+        <ContentArea />
       </main>
     </>
   );
