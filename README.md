@@ -44,7 +44,7 @@
 
 ## :dart: About ##
 
-Describe your project
+CrownCast is a platform that allows users to create and manage their own events. It is a full-stack application built with Next.js, TypeScript, Tailwind CSS, and React-Icons.
 
 ## :sparkles: Features ##
 
