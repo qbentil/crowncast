@@ -10,7 +10,7 @@ const AdminsPage = () => {
   return (
     <>
       <Head>
-        <title>Contestant | Administrator</title>
+        <title>System Admins | Administrator</title>
         <meta name="description" content="CrownCast Portal" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
