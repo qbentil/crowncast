@@ -47,7 +47,7 @@ const Filter = ({
             className="z-10 bg-white rounded shadow w-60"
           >
             <div className="p-3">
-              <Searchbar onSearch={onSearch} />
+              <Searchbar onSearch={onSearch} placeholder="Filter" />
             </div>
             <ul className="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 ">
               {filtered &&
