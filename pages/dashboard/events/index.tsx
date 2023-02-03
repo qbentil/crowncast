@@ -1,8 +1,9 @@
+import { ContentArea, Events, Login, Sidebar } from "../../../components";
+
+import { Filters } from "../../../utils/dump";
 import Head from "next/head";
 import React from "react";
-import { ContentArea, Login, Sidebar, SubHeader } from "../../../components";
 import { useStateValue } from "../../../context/StateProvider";
-import { Filters } from "../../../utils/dump";
 
 const EventsPage = () => {
     const [{ user }, dispatch] = useStateValue();
@@ -20,7 +21,7 @@ const EventsPage = () => {
                 <Sidebar />
                 {/* 75% width for content */}
                 <ContentArea>
-                    <SubHeader title="Events" filters={Filters} />
+                    <Events />
                 </ContentArea>
             </main>
         </>
