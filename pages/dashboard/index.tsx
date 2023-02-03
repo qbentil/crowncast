@@ -1,9 +1,8 @@
 import Head from "next/head";
 import React from "react";
-import { ContentArea, Login, Sidebar } from "../../components";
+import { ContentArea, Login, Sidebar, Contestants } from "../../components";
 import { useStateValue } from "../../context/StateProvider";
 import InfoGraphics from "../../components/infographic";
-import Contestants from "../../components/contestants";
 
 const Dashboard = () => {
   const [{ user }, dispatch] = useStateValue();
