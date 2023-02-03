@@ -1,7 +1,7 @@
 import { Filters } from "../../utils/dump";
-import SubHeader from "../subpage-header";
-import ContestantsTable from "./table";
 import React from "react";
+import SubHeader from "../subpage-header";
+import Table from "./table";
 
 const Contestants = () => {
 
@@ -11,7 +11,7 @@ const Contestants = () => {
       <SubHeader title="Contestants" filters={Filters} />
 
       {/* table */}
-      <ContestantsTable />
+      <Table />
     </div>
   );
 };
