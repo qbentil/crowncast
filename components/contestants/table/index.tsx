@@ -1,8 +1,9 @@
-import React from 'react'
-import { MdEdit, MdDelete } from 'react-icons/md'
-import Pagination from '../../pagination'
+import { MdDelete, MdEdit } from 'react-icons/md'
 
-const ContestantsTable = () => {
+import Pagination from '../../pagination'
+import React from 'react'
+
+const Table = () => {
     return (
         <div className='w-full py-3 my-4 bg-white shadow-sm'>
             {/* title */}
@@ -61,4 +62,4 @@ const ContestantsTable = () => {
     )
 }
 
-export default ContestantsTable
+export default Table
