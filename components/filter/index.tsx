@@ -1,7 +1,8 @@
 import { Category, OptionType } from "../../types";
 import { IoFilterOutline, IoSearchOutline } from "react-icons/io5";
-import { useState } from "react";
+
 import Searchbar from "../searchbar";
+import { useState } from "react";
 
 const Filter = ({
   onChange,
@@ -75,7 +76,7 @@ const Filter = ({
                 <li className="cursor-pointer block">
                   <div className="flex items-center p-2 rounded hover:bg-gray-100">
                     <label className="w-full ml-2 text-sm font-medium text-gray-900 rounded">
-                      No results found
+                      No filters found
                     </label>
                   </div>
                 </li>
