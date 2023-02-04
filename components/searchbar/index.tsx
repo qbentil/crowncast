@@ -19,7 +19,7 @@ const Searchbar = ({ onSearch, placeholder }: SearchbarProps) => {
         <input
           type="text"
           id="input-group-search"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none block w-full pl-10 p-2.5 "
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none block w-full pl-10 p-2.5 focus:border-primary focus:text-primary"
           placeholder={`${placeholder} Search`}
           onChange={onSearch}
         />
