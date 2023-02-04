@@ -10,7 +10,13 @@ import { useStateValue } from "../../context/StateProvider";
 const SideBar = () => {
   const [{ user }, dispatch] = useStateValue();
   const Logout = () => {
-    console.log("logout");
+    // perform server logout
+
+    // update state
+    dispatch({
+      type: "SET_USER",
+      playload: null
+    })
   };
   return (
     <div className="w-[20%] h-[100vh] bg-primary flex flex-col gap-y-4 items-center justify-start font-sans overflow-y-hidden">
