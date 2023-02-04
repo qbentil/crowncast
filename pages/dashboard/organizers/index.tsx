@@ -1,4 +1,4 @@
-import { ContentArea, Login, Sidebar } from "../../../components";
+import { ContentArea, Login, Organizers, Sidebar } from "../../../components";
 
 import Head from "next/head";
 import React from "react";
@@ -20,7 +20,7 @@ const OrganizersPage = () => {
         <Sidebar />
         {/* 75% width for content */}
         <ContentArea>
-          <p>Organizers</p>
+          <Organizers />
         </ContentArea>
       </main>
     </>
