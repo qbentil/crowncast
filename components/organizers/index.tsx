@@ -22,7 +22,7 @@ const Filters = [
 const Organizers = () => {
 
   return (
-    <div className="w-full">d
+    <div className="w-full">
       {/* header */}
       <SubHeader title="Organizers" filters={Filters} />
 
