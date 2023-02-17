@@ -1,4 +1,4 @@
-import { ContentArea, Login, Sidebar } from "../../../components";
+import { ContentArea, Login, Settings, Sidebar } from "../../../components";
 
 import Head from "next/head";
 import React from "react";
@@ -19,7 +19,9 @@ const SettingsPage = () => {
         {/* 25% width for sidebar */}
         <Sidebar />
         {/* 75% width for content */}
-        <ContentArea />
+        <ContentArea>
+          <Settings />
+        </ContentArea>
       </main>
     </>
   );
