@@ -10,9 +10,9 @@ const Settings = () => {
                 <p>Update your photo and Personal details here!</p>
             </div>
             {/* image and uploader */}
-            <div>
-                <div className="w-60">
-                    <img src="/assets/bentil.jpeg" alt="current" className=' w-full rounded' />
+            <div className='flex'>
+                <div className="w-40">
+                    <img src="/assets/bentil.jpeg" alt="current" className=' w-full rounded-full' />
                 </div>
                 <div>
                     <button>Upload</button>
