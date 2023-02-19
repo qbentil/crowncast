@@ -15,9 +15,9 @@ const Uploader = ({ setImageURI, setImage }: Props) => {
       return toast.error("Please select an image file");
     }
     // accept only files less than or equal to 5mb
-    // if(file.size > 5242880) {
-    //   return toast.error("File size must be less than 5mb");
-    // }
+    if(file.size > 5242880) {
+      return toast.error("File size must be less than 5mb");
+    }
     console.log("file", file);
     setImageURI(file);
     setImage(URL.createObjectURL(file));
