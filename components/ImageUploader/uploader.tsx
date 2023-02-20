@@ -1,70 +1,45 @@
-import Image from "next/image";
+import { MdCloudUpload } from "react-icons/md";
 import { toast } from "react-toastify";
-import { useRef, useState } from "react";
- import { motion } from "framer-motion";
+
+
 interface Props {
-  setImageURI: any;
-  setImage: any;
+  setImageURI?: React.Dispatch<React.SetStateAction<string | null | undefined>>;
+  setImage?: React.Dispatch<React.SetStateAction<string | null | undefined>>;
 }
 
-const Uploader = ({ setImageURI, setImage }: Props) => {
-  const onImageChange = (e: any) => {
+const Uploader = ({setImageURI, setImage}: Props) => {
+  const onImageChange = (e:any) => {
     const file = e.target.files[0];
     // accept only image files
     if (!file.type.match("image.*")) {
-      return toast.error("Please select an image file");
+      toast.error("Please select an image file");
+      return;
     }
-    // accept only files less than or equal to 5mb
-    if(file.size > 5242880) {
-      return toast.error("File size must be less than 5mb");
+    // accept only files less than or equal to 1MB
+    if (file.size > 1000000) {
+      toast.error("File size must not excede 1MB");
+      return;
     }
     console.log("file", file);
-    setImageURI(file);
-    setImage(URL.createObjectURL(file));
-    console.log(URL.createObjectURL(file));
-    
+    setImageURI && setImageURI(file)
+    setImage && setImage(URL.createObjectURL(file));
   };
-
-
-  const Button = ({title, onClick}: {title: string, onClick?: () => void}) => {
-    return (
-      <motion.button whileHover={{scale:1.02}} onClick={onClick} className="bg-[#0360C5] shadow-lg text-white rounded-full w-[9rem] h-[2.5rem] hover:bg-[#024c9b]">
-        {title}
-      </motion.button>
-    )
-  }
-
-  const ref: any = useRef(null);
-
-  const openFileExplorer = () => {
-    ref.current.click();
-  };
-
   return (
     <article className="w-full h-full">
       <label
-      ref={ref}
         htmlFor="file-upload"
-        className="w-full h-full flex flex-col justify-center items-center bg-[#f8f6f6] rounded-3xl cursor-pointer border-2 border-[#6B79F3] border-dashed p-10"
+        className="w-full h-full flex flex-col justify-center items-center rounded-lg cursor-pointer border-2 border-dashed p-10"
       >
-        <div className="flex flex-col justify-center items-center ">
-          <Image
-            alt="image upload"
-            height={150}
-            objectFit="contain"
-            src={require("../../public/assets/upload-image.png")}
-          />
-          <p className="mb-2 text-sm text-center text-black">
-              Browse and choose the cheque you want to upload
+        <div className="flex flex-col justify-center items-center pt-5 pb-6 gap-2">
+          <MdCloudUpload className="text-gray-500 text-3xl " />
+          <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+            <span className="font-semibold">Click here to upload</span>
           </p>
-         <div className="flex flex-col md:flex-row w-full space-y-4 md:space-y-0 items-center justify-between mt-6 px-4">
-            <Button onClick={openFileExplorer} title="Browse Image"/>
-         </div>
-
-
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            PNG OR JPG {"(MAX. 400x400px)"}
+          </p>
         </div>
         <input
-          ref={ref}
           id="file-upload"
           name="imageURI"
           type="file"
