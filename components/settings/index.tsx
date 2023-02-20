@@ -1,9 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 
-import React from 'react'
+import {useState} from 'react'
 import { BiCloudUpload } from 'react-icons/bi'
+import ImageUploader from '../ImageUploader'
 
 const Settings = () => {
+    const [image, setImage] = useState<string | null | undefined>(null)
+    const [imageURI, setImageURI] = useState<string | null | undefined>(null) 
+
     return (
         <div>
             {/*  */}
@@ -13,15 +17,22 @@ const Settings = () => {
             </div>
             {/* image and uploader */}
             <div className='flex items0center justify-start gap-x-5'>
-                <div className="w-40 border border-t-2 border-t-primary border-b-2 border-b-primary rounded-full">
-                    <img src="/assets/bentil.jpeg" alt="current" className=' w-full rounded-full' />
+                <div className="w-40  rounded-full">
+                    <img src="/assets/bentil.jpeg" alt="current" className='border border-t-2 border-t-primary border-b-2 border-b-primary w-full rounded-full' />
                 </div>
-                <div className="border-2 cursor-pointer border-dashed rounded-lg w-2/5 flex gap-x-5 items-center justify-center">
-                    <p>Upload</p>
-                    <BiCloudUpload className='text-4xl' />
+                <div className='w-3/5 h-72'>
+                <ImageUploader 
+                    setImageURI={setImageURI}
+                    setImage={setImage}
+                    image={image}
+                    className='w-full h-full'
+                />
                 </div>
             </div>
-
+            {/* Form */}
+            <div className="">
+                
+            </div>
         </div>
     )
 }
