@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 
-import {useState} from 'react'
+import { useState } from 'react'
 import { BiCloudUpload } from 'react-icons/bi'
 import ImageUploader from '../ImageUploader'
 
 const Settings = () => {
     const [image, setImage] = useState<string | null | undefined>(null)
-    const [imageURI, setImageURI] = useState<string | null | undefined>(null) 
+    const [imageURI, setImageURI] = useState<string | null | undefined>(null)
 
     return (
         <div>
@@ -17,21 +17,21 @@ const Settings = () => {
             </div>
             {/* image and uploader */}
             <div className='flex items0center justify-start gap-x-5'>
-                <div className="w-40  rounded-full">
-                    <img src="/assets/bentil.jpeg" alt="current" className='border border-t-2 border-t-primary border-b-2 border-b-primary w-full rounded-full' />
+                <div className="w-64 h-64  rounded-lg">
+                    <img src="/assets/bentil.jpeg" alt="current" className='border border-primary w-full h-full rounded-lg' />
                 </div>
-                <div className='w-3/5 h-72'>
-                <ImageUploader 
-                    setImageURI={setImageURI}
-                    setImage={setImage}
-                    image={image}
-                    className='w-full h-full'
-                />
+                <div className='w-2/5 h-64'>
+                    <ImageUploader
+                        setImageURI={setImageURI}
+                        setImage={setImage}
+                        image={image}
+                        className='w-full h-full'
+                    />
                 </div>
             </div>
             {/* Form */}
             <div className="">
-                
+
             </div>
         </div>
     )
