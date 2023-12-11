@@ -21,7 +21,6 @@ const ContestantsPage = () => {
         <Sidebar />
         {/* 75% width for content */}
         <ContentArea>
-          <SubHeader title="Events" filters={Filters} />
         </ContentArea>
       </main>
     </>

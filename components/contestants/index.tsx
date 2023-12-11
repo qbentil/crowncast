@@ -7,9 +7,6 @@ const Contestants = () => {
 
   return (
     <div className="w-full">
-      {/* header */}
-      <SubHeader title="Contestants" filters={Filters} />
-
       {/* table */}
       <Table />
     </div>

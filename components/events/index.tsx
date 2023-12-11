@@ -27,8 +27,6 @@ const Events = () => {
 
   return (
     <div className="w-full">
-      {/* header */}
-
       {/* table */}
       <Table />
     </div>

@@ -4,7 +4,7 @@ import { BsArrowLeft, BsArrowRight, BsEye, BsTrashFill } from 'react-icons/bs';
 import { FaSearch, FaSort } from 'react-icons/fa';
 import React, { useState, useEffect } from 'react';
 
-import { MdOutlineNavigateNext } from 'react-icons/md';
+import { MdDelete, MdEdit, MdInfo, MdOutlineNavigateNext } from 'react-icons/md';
 import { ParseToOptions, convertToKey } from '../../../utils/data';
 import { TbColumnObj } from '../../../interfaces/table';
 import SubHeader from './subpage-header';
@@ -220,19 +220,26 @@ function Table<T>({
                 </td>
               ))}
               <td className="py-2 px-1 border-b border-gray-300">
-                <div className="flex justify-center">
-                  <BiEdit
-                    onClick={() => onEditClick(item)}
-                    className="text-blue-500 hover:text-blue-700 cursor-pointer text-lg mx-1"
-                  />
-                  <BsTrashFill
-                    onClick={() => onDeleteClick(item)}
-                    className="text-red-500 hover:text-red-700 cursor-pointer text-lg mx-1"
-                  />
-                  <BsEye
-                    onClick={() => onViewClick(item)}
-                    className="text-green-500 hover:text-green-700 cursor-pointer text-lg mx-1"
-                  />
+                <div className="flex justify-center gap-x-2 justify-center">
+                  <button title='Edit' className='bg-blue-50 rounded px-4 py-1 text-lg shadow-sm cursor-pointer'>
+                    <MdEdit
+                      onClick={() => onEditClick(item)}
+                      className="text-blue-500 hover:text-blue-700 cursor-pointer text-lg"
+                    />
+                  </button>
+                  <button title='Delete' className='bg-red-50 rounded px-4 py-1 text-lg shadow-sm cursor-pointer'>
+                    <MdDelete
+                      onClick={() => onDeleteClick(item)}
+                      className="text-red-500 hover:text-red-700 cursor-pointer text-lg"
+                    />
+                  </button>
+
+                  <button title='More info' className='bg-green-50 rounded px-4 py-1 text-lg shadow-sm cursor-pointer'>
+                    <MdInfo
+                      onClick={() => onViewClick(item)}
+                      className="text-green-500 hover:text-green-700 cursor-pointer text-lg"
+                    />
+                  </button>
                 </div>
               </td>
             </tr>

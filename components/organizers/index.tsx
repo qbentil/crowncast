@@ -23,8 +23,6 @@ const Organizers = () => {
 
   return (
     <div className="w-full">
-      {/* header */}
-      <SubHeader title="Organizers" filters={Filters} />
 
       {/* table */}
       <Table />

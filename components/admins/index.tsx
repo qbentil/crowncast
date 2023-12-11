@@ -4,25 +4,6 @@ import SubHeader from "./table/subpage-header";
 import Table from "./table";
 import { AdminTableColumns } from '../../utils/data';
 
-const Filters = [
-  {
-    value: "Opening Date",
-    label: "Opening Date",
-  },
-  {
-    value: "Organizer",
-    label: "Organizer",
-  },
-  {
-    value: "Cost /vote",
-    label: "Cost /vote",
-  },
-  {
-    value: "Category",
-    label: "Category",
-  }
-] as OptionType[]
-
 
 const tableData = [
   {
