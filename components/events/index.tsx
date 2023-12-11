@@ -1,4 +1,4 @@
-import { OptionType } from '../../types'
+import { OptionType } from '../../interfaces'
 import React from "react";
 import SubHeader from "../subpage-header";
 import Table from "./table";

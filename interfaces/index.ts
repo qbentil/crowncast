@@ -1,5 +1,3 @@
-import { type } from "os";
-
 export type NavItem = {
     name: string;
     link?: string;

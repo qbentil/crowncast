@@ -1,4 +1,4 @@
-import { Category, OptionType } from "../../types";
+import { Category, OptionType } from "../../interfaces";
 import { IoFilterOutline, IoSearchOutline } from "react-icons/io5";
 
 import Searchbar from "../searchbar";

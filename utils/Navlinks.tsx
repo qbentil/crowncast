@@ -4,7 +4,7 @@ import { HiOutlineUser, HiOutlineUsers } from "react-icons/hi";
 
 import { BsCheckSquare } from "react-icons/bs";
 import { CiSettings } from "react-icons/ci";
-import { NavItem } from "../types";
+import { NavItem } from "../interfaces";
 
 export const ActionItems: NavItem[] = [
   {

@@ -2,7 +2,7 @@ import Filter from '../filter'
 import React from 'react'
 import Searchbar from "../searchbar";
 import { AiOutlineClose } from "react-icons/ai";
-import { OptionType } from "../../types";
+import { OptionType } from "../../interfaces";
 import { useState } from "react";
 
 interface Props {
