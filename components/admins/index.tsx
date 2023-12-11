@@ -34,15 +34,15 @@ const StatusBadge = ({ status }: { status: string }) => {
 const Admins = () => {
 
   const onEdit = (item: any) => {
-    console.log(item)
+    console.log("Edit>>>", item)
   }
 
   const onDelete = (item: any) => {
-    console.log(item)
+    console.log("Delete>>>", item)
   }
 
   const onView = (item: any) => {
-    console.log(item)
+    console.log("View>>>", item)
   }
 
   return (
@@ -55,7 +55,7 @@ const Admins = () => {
         onEditClick={onEdit}
         onDeleteClick={onDelete}
         onViewClick={onView}
-        tableClasses={'w-[80vw]'}
+        tableClasses={'w-full'}
         tableContainerClasses={'text-md'}
       />
     </div>
