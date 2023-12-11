@@ -1,6 +1,6 @@
 import { OptionType } from '../../interfaces'
 import React from "react";
-import SubHeader from "../subpage-header";
+import SubHeader from "../admins/table/subpage-header";
 import Table from "./table";
 
 const Filters = [

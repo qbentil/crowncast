@@ -3,6 +3,7 @@ import React from "react";
 import { ContentArea, Login, Sidebar, Contestants } from "../../components";
 import { useStateValue } from "../../context/StateProvider";
 import InfoGraphics from "../../components/infographic";
+import Admins from "../../components/admins";
 
 const Dashboard = () => {
   const [{ user }, dispatch] = useStateValue();
@@ -21,7 +22,7 @@ const Dashboard = () => {
         {/* 75% width for content */}
         <ContentArea>
           <InfoGraphics />
-          <Contestants />
+          <Admins />
         </ContentArea>
       </main>
     </>

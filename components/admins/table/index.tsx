@@ -1,12 +1,13 @@
 import { AiOutlineSortAscending, AiOutlineSortDescending } from 'react-icons/ai';
 import { BiEdit, BiLastPage } from 'react-icons/bi';
-import { BsEye, BsTrashFill } from 'react-icons/bs';
+import { BsArrowLeft, BsArrowRight, BsEye, BsTrashFill } from 'react-icons/bs';
 import { FaSearch, FaSort } from 'react-icons/fa';
 import React, { useState, useEffect } from 'react';
 
 import { MdOutlineNavigateNext } from 'react-icons/md';
-import { convertToKey } from '../../../utils/data';
+import { ParseToOptions, convertToKey } from '../../../utils/data';
 import { TbColumnObj } from '../../../interfaces/table';
+import SubHeader from './subpage-header';
 
 interface TableProps<T> {
   data: T[];
@@ -132,40 +133,41 @@ function Table<T>({
 
   const Pagination = () => {
     return (
-      <div className="mt-4 flex gap-x-3 justify-end items-center">
-        <p className="text-sm text-gray-500">
-          Showing {startIndex + 1} to {endIndex > data.length ? data.length : endIndex} of {data.length} entries
-        </p>
-        <div className="flex justify-center gap-x-2 items-center">
-          <button
-            onClick={() => handlePageChange(1)}
-            disabled={currentPage === 1}
-            className={`${currentPage === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-700'
-              } text-white font-bold py-2 px-4 rounded`}
-          >
-            <BiLastPage className="transform rotate-180" />
-          </button>
-          <div className="flex items-center justify-center gap-x-2">
-            {/*  next and prev buttons */}
-            <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} className={`${currentPage === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-700'} text-white font-bold py-2 px-4 rounded`}>
-              <MdOutlineNavigateNext className="transform rotate-180" />
+      <>
+        <div className="mt-4 flex gap-x-3 justify-end items-center">
+          <p className="text-sm text-gray-500">
+            Showing {startIndex + 1} to {endIndex > data.length ? data.length : endIndex} of {data.length} entries
+          </p>
+          <div className="flex justify-center items-center">
+            <button
+              onClick={() => handlePageChange(1)}
+              disabled={currentPage === 1}
+              className={`inline-flex gap-x-3 items-center px-4 py-2 text-sm font-medium bg-transparent focus:outline-none border border-primary-700 rounded-l-lg focus:z-10 focus:ring-2 focus:bg-primary-700 focus:text-white ${currentPage === 1 ? 'cursor-not-allowed bg-gray-200 text-gray-500' : 'text-primary-700 hover:bg-primary-700 hover:text-white'} `}
+            >
+              <BiLastPage className="transform rotate-180" />
             </button>
-            <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages} className={`${currentPage === totalPages ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-700'} text-white font-bold py-2 px-4 rounded`}>
-              <MdOutlineNavigateNext />
+            <div className="flex items-center justify-center">
+              {/*  next and prev buttons */}
+              <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} className={`inline-flex gap-x-3 items-center px-4 py-2 text-sm font-medium  bg-transparent focus:outline-none border border-primary-700 border-l-0 border-r-0  focus:z-10 focus:ring-2 focus:bg-primary-700 focus:text-white ${currentPage === 1 ? 'cursor-not-allowed bg-gray-200 text-gray-500' : 'text-primary-700 hover:bg-primary-700 hover:text-white'
+                }`}>
+                <MdOutlineNavigateNext className="transform rotate-180" />
+              </button>
+              <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages} className={`inline-flex gap-x-3 items-center px-4 py-2 text-sm font-medium  bg-transparent focus:outline-none border border-primary-700  border-r-0  focus:z-10 focus:ring-2 focus:bg-primary-700 focus:text-white ${currentPage === totalPages ? 'cursor-not-allowed bg-gray-200 text-gray-500' : 'text-primary-700 hover:bg-primary-700 hover:text-white'
+                }`}>
+                <MdOutlineNavigateNext />
+              </button>
+            </div>
+            <button
+              onClick={() => handlePageChange(totalPages)}
+              disabled={currentPage === totalPages}
+              className={`inline-flex gap-x-3 items-center px-4 py-2 text-sm font-medium  bg-transparent focus:outline-none border border-primary-700 rounded-r-lg  focus:z-10 focus:ring-2 focus:bg-primary-700 focus:text-white ${currentPage === totalPages ? 'cursor-not-allowed bg-gray-200 text-gray-500' : 'text-primary-700 hover:bg-primary-700 hover:text-white'
+                }`}
+            >
+              <BiLastPage />
             </button>
           </div>
-          <button
-            onClick={() => handlePageChange(totalPages)}
-            disabled={currentPage === totalPages}
-            className={`${currentPage === totalPages
-              ? 'bg-gray-300 cursor-not-allowed'
-              : 'bg-blue-500 hover:bg-blue-700'
-              } text-white font-bold py-2 px-4 rounded`}
-          >
-            <BiLastPage />
-          </button>
         </div>
-      </div>
+      </>
     )
   }
 
@@ -197,24 +199,7 @@ function Table<T>({
     <div className={`p-3 ${tableContainerClasses} margin-auto`}>
       {/* filter: This show include a search bar at the right */}
       {
-        showFilter && (
-          <div className="w-full flex justify-end items-center py-2">
-            {/* search bar */}
-            {
-              showSearch && (
-                <div className="w-1/5 py-2 flex items-center gap-x-2 border bg-white border-gray-300 rounded-md px-2">
-                  <FaSearch className="text-gray-500" />
-                  <input
-                    type="text"
-                    placeholder="Search"
-                    className="outline-none w-full"
-                    onChange={handleSearch}
-                  />
-                </div>
-              )
-            }
-          </div>
-        )
+        showFilter && <SubHeader filters={ParseToOptions(columns)} title="Admins" onSearch={handleSearch} />
       }
       {/* table */}
       <table className={`${tableClasses} border-collapse border border-gray-300`}>

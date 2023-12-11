@@ -1,16 +1,17 @@
-import Filter from '../filter'
+import Filter from '../../../filter'
 import React from 'react'
-import Searchbar from "../searchbar";
+import Searchbar from "../../../searchbar";
 import { AiOutlineClose } from "react-icons/ai";
-import { OptionType } from "../../interfaces";
+import { OptionType } from "../../../../interfaces";
 import { useState } from "react";
 
 interface Props {
     filters: OptionType[],
-    title?: string
+    title?: string,
+    onSearch: any
 }
 
-const SubHeader = ({ filters, title }: Props) => {
+const SubHeader = ({ filters, title, onSearch }: Props) => {
     const [filterby, setFilterby] = useState<OptionType[] | []>([])
     const [data, setData] = useState<OptionType[] | []>(filters)
     const filterChange = (option: OptionType) => {
@@ -29,7 +30,7 @@ const SubHeader = ({ filters, title }: Props) => {
         setFilterby(newFilter);
     }
     return (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mb-4">
             <div className="flex items-center justify-start gap-x-8 min-w-[25rem]">
                 <Filter options={data} selected={filterby} onChange={filterChange} />
                 {/* filters */}
@@ -46,7 +47,7 @@ const SubHeader = ({ filters, title }: Props) => {
             </div>
 
             {/* searchbar */}
-            <Searchbar placeholder={title} />
+            <Searchbar placeholder={title} onSearch={onSearch} />
         </div>
     )
 }
