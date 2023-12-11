@@ -74,7 +74,7 @@ const Admins = () => {
         onEditClick={onEdit}
         onDeleteClick={onDelete}
         onViewClick={onView}
-        tableClasses={'w-[85vw]'}
+        tableClasses={'w-[80vw]'}
         tableContainerClasses={'text-md'}
       />
     </div>
