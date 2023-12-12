@@ -26,7 +26,7 @@ const Login = () => {
 
   return (
     <div className="w-full h-[100vh] bg-white flex items-center justify-center">
-      <div className="w-[30%] h-4/5 flex flex-col gap-y-4">
+      <div className="w-full px-6 md:w-[30%] h-4/5 flex flex-col gap-y-10 md:gap-y-4">
         {/* LOGO */}
         <div className="w-full  flex flex-col gap-y-5 items-center justify-center">
           <img src="/assets/crown-cast.png" alt="logo" className="w-1/2" />
