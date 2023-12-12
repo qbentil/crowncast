@@ -6,3 +6,5 @@ export {default as Contestants} from './contestants'
 export {default as Events} from './events'
 export {default as Organizers} from './organizers'
 export {default as Settings} from './settings'
+
+export {default as Navbar} from './website/navbar'
