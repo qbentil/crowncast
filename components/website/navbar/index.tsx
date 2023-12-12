@@ -15,7 +15,7 @@ const Navbar = () => {
     }
     return (
         <div className="w-screen h-[6vh] flex items-center justify-center">
-            <nav className="w-full md:w-[85vw] h-full bg-white flex items-center justify-between px-6 py-8 relative">
+            <nav className="w-full md:w-[85vw] h-full bg-white flex items-center justify-between px-6 py-8">
                 <Link href="/" className="flex items-center">
                     <img src="/assets/crowncast-alt.svg" className="w-[70%] md:w-[60%] md:w-full h-full" alt="Logo" />
                     <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Crowncast</span>
