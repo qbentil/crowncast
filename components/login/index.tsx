@@ -2,9 +2,27 @@
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useStateValue } from "../../context/StateProvider";
+import { toast } from "react-toastify";
 const Login = () => {
-  const [{}, dispatch] = useStateValue();
+  const [{ }, dispatch] = useStateValue();
   const [userType, setUserType] = React.useState("organizer");
+  const [credentials, setCredentials] = React.useState({
+    email: "",
+    password: "",
+    type: userType,
+  });
+
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (credentials.email === "" || credentials.password === "") return toast.error("Please fill all fields");
+    e.preventDefault();
+    dispatch({
+      type: "SET_USER",
+      user: credentials,
+    });
+
+    toast.success("Login successful");
+  }
 
   return (
     <div className="w-full h-[100vh] bg-white flex items-center justify-center">
@@ -17,7 +35,7 @@ const Login = () => {
             Welcome back {userType}!
           </p>
         </div>
-        <form className="" action="" autoComplete="off">
+        <form className="" method="POST" autoComplete="off" onSubmit={handleLogin}>
           <div className="w-full flex flex-col gap-y-1">
             <label htmlFor="email" className="text-sm text-gray-500">
               Email
@@ -28,6 +46,8 @@ const Login = () => {
               id="email"
               className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-primary focus:text-primary"
               placeholder="Enter your email"
+              value={credentials.email}
+              onChange={(e) => setCredentials((prev) => ({ ...prev, email: e.target.value }))}
             />
           </div>
           <div className="w-full flex flex-col gap-y-1 mt-4">
@@ -40,6 +60,8 @@ const Login = () => {
               id="password"
               className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:border-primary focus:text-primary"
               placeholder="........."
+              value={credentials.password}
+              onChange={(e) => setCredentials((prev) => ({ ...prev, password: e.target.value }))}
             />
           </div>
           {/* remember me and forgot password */}

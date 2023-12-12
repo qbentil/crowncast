@@ -1,9 +1,5 @@
 export const initialState = {
-  user: {
-    name: "Shadrack Bentil",
-    role: "admin",
-    email: "s.bentil@crowncast.com"
-  },
+  user: null,
   events: [],
   contestants: [],
 };

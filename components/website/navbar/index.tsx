@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { } from 'react'
 import Link from 'next/link'
 import { RxHamburgerMenu, RxTwitterLogo } from 'react-icons/rx'
 import { MdFacebook } from 'react-icons/md'
 import { CiInstagram } from 'react-icons/ci'
+import { useRouter } from 'next/router'
 
 const Navbar = () => {
+
     const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false)
+    const router = useRouter()
+
+    const goto = (path: string) => {
+        router.push(path)
+    }
     return (
         <nav className="w-full md:w-[85vw] h-[6vh] bg-white flex items-center justify-between px-6 py-8 relative">
             <Link href="/" className="flex items-center">
@@ -25,7 +32,7 @@ const Navbar = () => {
             </div>
             {/* Auth */}
             <div className="hidden md:flex items-center justify-center gap-x-8">
-                <button className="text-base font-medium bg-primary px-5 py-1 rounded-md text-white hover:text-primary hover:bg-white transition-all duration-300">Login</button>
+                <button onClick={() => goto("/dashboard")} className="text-base font-medium bg-primary px-5 py-1 border border-primary rounded-md text-white hover:text-primary hover:bg-white transition-all duration-300">Login</button>
             </div>
 
             {/* mobile navs */}
@@ -53,7 +60,7 @@ const Navbar = () => {
                             <Link href="/about" className="text-base font-medium text-primary hover:text-hover hover:bg-gray-200 py-1 text-center px-5 w-full rounded-sm">About</Link>
                             <Link href="/contact" className="text-base font-medium text-primary hover:text-hover hover:bg-gray-200 py-1 text-center px-5 w-full rounded-sm">Contact</Link>
                             <Link href="/faqs" className="text-base font-medium text-primary hover:text-hover hover:bg-gray-200 py-1 text-center px-5 w-full rounded-sm">FAQs</Link>
-                            <button className="text-base font-medium bg-primary px-5 py-1 rounded-md text-white hover:text-primary hover:bg-white w-full transition-all duration-300">Login</button>
+                            <button onClick={() => goto("/dashboard")} className="text-base font-medium bg-primary px-5 py-1 rounded-md text-white hover:text-primary hover:bg-white w-full transition-all duration-300">Login</button>
                         </div>
 
                         {/* footer at the bottom */}
