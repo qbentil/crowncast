@@ -17,11 +17,11 @@ interface Props {
 
 const Button = ({className, icon, iconPosition = "left", loading,onClick, disabled, title, variant }: Props) => {
   return (
-    <button className={`hover:shadow-lg py-2 px-4 rounded flex items-center justify-center gap-x-2 ${className} ${
-        variant === 'secondary' ? 'bg-white text-primary border border-gray-300' :
+    <button className={`hover:shadow-sm  py-2 px-4 rounded flex items-center justify-center gap-x-2 ${className} ${
+        variant === 'secondary' ? 'bg-white text-primary border border-gray-30 hover:bg-gray-100' :
         variant === 'danger' ? 'bg-red-600 text-white' :
         variant === 'success' ? 'bg-green-600 text-white' :
-        variant === 'warning' ? 'bg-yellow-600 text-white' : 'bg-primary text-white'
+        variant === 'warning' ? 'bg-yellow-600 text-white' : 'bg-primary text-white hover:bg-hover'
 
     }`}>
         {icon && iconPosition === 'left' && icon}
