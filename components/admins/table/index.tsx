@@ -1,9 +1,7 @@
 import { AiOutlineSortAscending, AiOutlineSortDescending } from 'react-icons/ai';
-import { BiEdit, BiLastPage } from 'react-icons/bi';
-import { BsArrowLeft, BsArrowRight, BsEye, BsTrashFill } from 'react-icons/bs';
-import { FaSearch, FaSort } from 'react-icons/fa';
+import { BiLastPage } from 'react-icons/bi';
+import { BsTrashFill } from 'react-icons/bs';
 import React, { useState, useEffect } from 'react';
-
 import { MdDelete, MdEdit, MdInfo, MdOutlineNavigateNext } from 'react-icons/md';
 import { ParseToOptions, convertToKey } from '../../../utils/data';
 import { TbColumnObj } from '../../../interfaces/table';
