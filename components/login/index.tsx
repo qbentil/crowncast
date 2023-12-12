@@ -3,6 +3,7 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useStateValue } from "../../context/StateProvider";
 import { toast } from "react-toastify";
+import Link from "next/link";
 const Login = () => {
   const [{ }, dispatch] = useStateValue();
   const [userType, setUserType] = React.useState("organizer");
@@ -29,7 +30,9 @@ const Login = () => {
       <div className="w-full px-6 md:w-[30%] h-4/5 flex flex-col gap-y-10 md:gap-y-4">
         {/* LOGO */}
         <div className="w-full  flex flex-col gap-y-5 items-center justify-center">
-          <img src="/assets/crown-cast.png" alt="logo" className="w-1/2" />
+          <Link href="/" className="flex items-center w-full justify-center">
+            <img src="/assets/crown-cast.png" alt="logo" className="w-1/2" />
+          </Link>
           <h2 className="font-bold text-xl">Login to your account</h2>
           <p className="text-sm text-gray-500 capitalize">
             Welcome back {userType}!
