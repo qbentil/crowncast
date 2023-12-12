@@ -10,6 +10,7 @@ module.exports = {
         primary: "#6941C6",
         "primary-700": "#6941C6",
         "primary-50": "#F9F5FF",
+        "primary-100": "#F4EBFF",
         hover: "#7F56D9",
       },
     },
