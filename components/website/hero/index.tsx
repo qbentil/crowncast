@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from '../../Button'
 import { LuPlayCircle } from 'react-icons/lu'
+import { motion } from 'framer-motion'
+import { Transition } from '../../../utils/animate'
 
 const Hero = () => {
     return (
@@ -23,7 +25,15 @@ const Hero = () => {
 
             {/* View */}
             <div className='w-full md:w-[75%] flex flex-col mt-4 items-center justify-center'>
-                <img src='/assets/desktop.svg' alt='hero' className='w-full h-full' />
+                <motion.img
+                    // button to top
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={Transition}
+                    src='/assets/desktop.svg'
+                    alt='hero'
+                    className='w-full h-full'
+                />
             </div>
 
             {/* trusted companies */}
@@ -32,6 +42,7 @@ const Hero = () => {
                     Trusted by
                 </h1>
                 <div className='w-[85vw] md:h-[10vh] flex items-center justify-center gap-x-4'>
+                    {/* make logos move indefinitely */}
                     <div className='flex items-center justify-center'>
                         <img src='/assets/brands/company.svg' alt='brand' className='w-full md:w-4/5 h-full' />
                     </div>

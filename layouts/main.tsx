@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import { Hero, Navbar } from '../components'
+import { Features, Hero, Navbar } from '../components'
 
 const Main = ({ page, children }: { page?: string, children?: React.ReactNode }) => {
     return (
@@ -14,6 +14,7 @@ const Main = ({ page, children }: { page?: string, children?: React.ReactNode })
             <main className={'min-h-[100vh] flex flex-col items-start justify-center overflow-x-hidden'}>
                 <Navbar />
                 <Hero />
+                <Features />
                 {children}
             </main>
         </>

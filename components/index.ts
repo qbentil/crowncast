@@ -10,3 +10,4 @@ export { default as Settings } from './settings'
 // Website
 export { default as Navbar } from './website/navbar'
 export { default as Hero } from './website/hero'
+export {default as Features} from './website/features'
