@@ -60,19 +60,21 @@ const Feature = ({ title, description, icon }: { title: string, description: str
 }
 const Features = () => {
     return (
-        <div className='w-full overflow-x-hidden  md:min-h-[50vh] flex flex-col items-center justify-center'>
+        <div className='w-full bg-gray-50 overflow-x-hidden  md:min-h-[50vh] flex flex-col items-center justify-center'>
             <div className='w-[85vw] h-full flex flex-col items-center justify-center'>
                 {/* heading */}
-                <h1 className='text-sm text-center text-primary'>
-                    Features
-                </h1>
-                <p className='text-xl md:text-3xl text-center md:mt-4'>
-                    Take a look at out cool features
-                </p>
-                {/* actions */}
-                <h1 className='text-sm text-center text-gray-800'>
-                    I will write something here
-                </h1>
+                <div className='w-full flex flex-col items-center justify-center gap-y-2 mb-4'>
+                    <h1 className='text-sm text-center text-primary'>
+                        Features
+                    </h1>
+                    <p className='text-xl md:text-3xl text-center md:mt-4'>
+                        Take a look at out cool features
+                    </p>
+                    {/* actions */}
+                    <h1 className='text-sm text-center text-gray-800'>
+                        I will write something here
+                    </h1>
+                </div>
 
                 {/* Mockups */}
                 <div className='flex'>
@@ -94,7 +96,7 @@ const Features = () => {
 
 
                 {/* features list */}
-                <div className='w-full grid grid-cols-2 md:grid-cols-3 items-center justify-center gap-4 mt-8'>
+                <div className='w-full grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-4 mt-8'>
                     {
                         data.map((item) => (
                             <Feature
