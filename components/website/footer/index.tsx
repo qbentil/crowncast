@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -16,9 +17,9 @@ const Footer = () => {
       </div>
 
       {/* all rights reserved */}
-      <div className="flex items-center justify-center gap-x-4 font-inter text-sm text-gray-400">
+      <div className="flex flex-col md:flex-row my-2 items-center justify-center gap-x-4 font-inter text-sm text-gray-400">
         <span className="">© 2021 - {new Date().getFullYear()} Crowncast. All rights reserved.</span>
-        <span className="text-primary-700">Terms of Service</span>
+        <Link href="/" className="underline text-primary-700">Terms of Service</Link>
       </div>
     </div>
   )
