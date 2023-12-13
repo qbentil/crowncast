@@ -60,7 +60,7 @@ const Feature = ({ title, description, icon }: { title: string, description: str
 }
 const Features = () => {
     return (
-        <div className='w-full bg-gray-50 overflow-x-hidden  md:min-h-[50vh] flex flex-col items-center justify-center'>
+        <div className='w-full bg-white overflow-x-hidden  md:min-h-[50vh] flex flex-col items-center justify-center'>
             <div className='w-[85vw] h-full flex flex-col items-center justify-center'>
                 {/* heading */}
                 <div className='w-full flex flex-col items-center justify-center gap-y-2 mb-4'>
