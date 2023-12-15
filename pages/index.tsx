@@ -1,5 +1,5 @@
 import { MainLayout } from '../layouts'
-import { Features, Hero, Testimonial, FAQs } from '../components'
+import { Features, Hero, Testimonial, FAQs, Ad } from '../components'
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <Features />
       <Testimonial />
       <FAQs />
+      <Ad />  
     </MainLayout>
   )
 }
