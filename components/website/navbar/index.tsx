@@ -26,7 +26,7 @@ const Navbar = () => {
                 </button>
                 <div className="hidden w-full md:flex items-center justify-center gap-x-8" id="navbar-default">
                     <Link href="/" className="text-base font-medium text-primary hover:text-hover">Home</Link>
-                    <Link href="/about" className="text-base font-medium text-primary hover:text-hover">Features</Link>
+                    <Link href="/features" className="text-base font-medium text-primary hover:text-hover">Features</Link>
                     <Link href="/about" className="text-base font-medium text-primary hover:text-hover">About</Link>
                     <Link href="/contact" className="text-base font-medium text-primary hover:text-hover">Contact</Link>
                     <Link href="/faqs" className="text-base font-medium text-primary hover:text-hover">FAQs</Link>
@@ -57,7 +57,7 @@ const Navbar = () => {
                             {/* links */}
                             <div className="w-[70%] flex flex-col gap-y-5 items-center justify-center -mt-24">
                                 <Link href="/" className="text-base font-medium text-primary hover:text-hover hover:bg-gray-200 py-1 text-center px-5 w-full rounded-sm">Home</Link>
-                                <Link href="/about" className="text-base font-medium text-primary hover:text-hover hover:bg-gray-200 py-1 text-center px-5 w-full rounded-sm">Features</Link>
+                                <Link href="/features" className="text-base font-medium text-primary hover:text-hover hover:bg-gray-200 py-1 text-center px-5 w-full rounded-sm">Features</Link>
                                 <Link href="/about" className="text-base font-medium text-primary hover:text-hover hover:bg-gray-200 py-1 text-center px-5 w-full rounded-sm">About</Link>
                                 <Link href="/contact" className="text-base font-medium text-primary hover:text-hover hover:bg-gray-200 py-1 text-center px-5 w-full rounded-sm">Contact</Link>
                                 <Link href="/faqs" className="text-base font-medium text-primary hover:text-hover hover:bg-gray-200 py-1 text-center px-5 w-full rounded-sm">FAQs</Link>
