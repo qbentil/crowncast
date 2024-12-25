@@ -1,0 +1,12 @@
+export { default as Input } from "./custom-input";
+export { default as Select } from "./custom-select";
+export { default as Button } from "./button";
+export { default as Textarea } from "./custom-textarea";
+export { default as OTP } from "./custom-otp";
+export { default as Tabs } from "./tabs";
+export { default as FileUploader } from "./files-upload";
+export { default as DatePicker } from "./date-picker";
+export { default as DateRangePicker } from "./date-range-picker";
+export { default as Attachment } from "./attachment";
+export { default as SearchInput } from "./search-input";
+export { default as ViewInput } from "./view-input";

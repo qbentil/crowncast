@@ -1,71 +1,80 @@
-/* eslint-disable @next/next/no-img-element */
+"use client"
 
-import NavItems, { ActionItems } from "../../utils/Navlinks";
+import { INavItem, getRoutes } from '../../utils/routes';
+import React, { useEffect, useState } from 'react'
 
-import Link from "next/link";
-import NavItem from "./NavItem";
-import React from "react";
-import { useStateValue } from "../../context/StateProvider";
+import Image from 'next/image'
+import Link from 'next/link'
+import { LogoutCurve } from 'iconsax-react'
+import clsx from "clsx";
+import { useAuthContext } from "@/hooks/userContext";
+import { usePathname } from 'next/navigation';
 
-const SideBar = () => {
-  const [{ user }, dispatch] = useStateValue();
-  const Logout = () => {
-    // perform server logout
+const NavItem: React.FC<INavItem> = ({ name, path, Icon }) => {
+    const pathname = usePathname();
+    const [active, setActive] = useState<boolean>(false);
 
-    // update state
-    dispatch({
-      type: "SET_USER",
-      playload: null
-    })
-  };
-  return (
-    <div className="w-[20%] h-[100vh] bg-primary flex flex-col gap-y-4 items-center justify-start font-sans overflow-y-hidden">
-      <div className="w-full flex flex-col gap-y-2 py-6 px-4">
-        <div className="w-full h-[4vh] flex items-start justify-start mb-4">
-          <img src="/assets/crowncast.svg" alt="logo" className="w-40" />
-        </div>
-        <aside className="flex flex-col h-[87vh] justify-between">
-          <div className="flex flex-col  gap-y-2">
-            {NavItems.map((item, index) => {
-              if (user?.role !== "admin" && item.protected) return null;
-              return <NavItem key={index} data={item} />;
-            })}
-          </div>
-          <div className="flex flex-col gap-y-2">
-            {ActionItems.map((item, index) => {
-              return (
-                <NavItem
-                  key={index}
-                  data={item}
-                  onClick={item.name == "Logout" ? Logout : undefined}
-                />
-              );
-            })}
-            {/* gray seperator */}
-            <div className="w-full h-px bg-gray-400"></div>
+    useEffect(() => {
+        // Check if the current pathname matches the nav item's path
+        // console.log({ path, pathname })
+        if (path === "/") {
+            setActive("/" === path); // Set active if the path is "/"
+        } else {
+            setActive(pathname.endsWith(path)); // Set active for other paths
+        }
+    }, [pathname, path]);
+
+    return (
+        <p
+            className={clsx(
+                "flex items-center text-white justify-start w-full px-3 py-2 rounded-full",
+                active && "bg-primary text-white", // Highlight active item,
+                "hover:bg-primary"
+            )}
+        >
             <Link
-              href="#"
-              className="flex items-center gap-x-4 p-2 w-full text-base rounded-lg text-white hover:bg-hover"
+                href={`/${path}`}
+                className="flex items-center justify-start w-full h-full "
             >
-              <div className="w-8 h-8 rounded-full bg-gray-200">
-                <img
-                  src={user?.avatar || "/assets/bentil.jpeg"}
-                  alt="profile"
-                  className="w-full rounded-full"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="">{user?.name || ""}</span>
-                <span className="text-xs ">
-                  {user?.email || " sbentil005@st.ug.edu.gh"}
-                </span>
-              </div>
+                {Icon && <Icon />}
+                <span className="ml-4">{name}</span>
             </Link>
-          </div>
-        </aside>
-      </div>
-    </div>
-  );
+        </p>
+    );
 };
 
-export default SideBar;
+const Sidebar = () => {
+    const { user, logout } = useAuthContext();
+    const routes = getRoutes(user?.role!);
+
+
+    useEffect(() => {
+        // disableDevTools();
+    }, []);
+    return (
+        <div className="w-full h-full bg-sidebar relative">
+            {/* logo */}
+            <div className="flex items-center justify-center gap-x-2 h-16">
+                <Image src="/assets/logo.png" alt="logo" width={40} height={40} className='border border-white rounded bg-white' />
+                <p className='font-bold text-white text-2xl'>Tap2Win E.</p>
+            </div>
+            <div className='flex items-start justify-center pl-6 pr-2 mt-6 gap-y-1 flex-col w-full'>
+                {/* nav with icons */}
+                {
+                    routes.map(route => <NavItem key={route.path} {...route} />)
+                }
+
+            </div>
+
+            {/* logout */}
+            <div className="absolute bottom-20 w-full px-8">
+                <div onClick={logout} className=" cursor-pointer flex items-center justify-start w-full h-16 text-white hover:text-gray">
+                    <LogoutCurve />
+                    <span className="ml-4">Logout</span>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Sidebar
