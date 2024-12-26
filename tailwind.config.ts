@@ -55,10 +55,11 @@ const config = {
       },
       colors: {
         primary: {
-          DEFAULT: "#153D6F",
-          "100": "#235BA1",
-          "50": "#E1EEFF",
-          hover: "#3B67FF"
+          DEFAULT: "#6941C6",
+          "100": "#F4EBFF",
+          "700": "#6941C6",
+          "50": "#F9F5FF",
+          hover: "#7F56D9"
         },
         secondary: {
           DEFAULT: "#BE9544",
@@ -96,6 +97,7 @@ const config = {
           "100": "#FFCBCB"
         }
       },
+      display: ["group-hover"],
       fontFamily: {
         sans: ["Montserrat", "Inter", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
